@@ -5,7 +5,7 @@
 * 
 *  Name: Faizal Aslam Student ID: _152121216_____________ Date: _2022-12-05_____________
 *
-*  Online (Cyclic) Link: 
+*  Online (Cyclic) Link: https://lime-anxious-oyster.cyclic.app/
 *
 ********************************************************************************/
 
@@ -16,7 +16,7 @@ const productData = require(path.join(__dirname, 'product-service.js'));
 const path = require('path');
 const app = express();
 
-const HTTP_PORT = process.env.PORT || 8080;
+var HTTP_PORT = process.env.PORT || 8080;
 
 const multer = require("multer");
 const cloudinary = require("cloudinary").v2;
