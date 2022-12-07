@@ -1,44 +1,41 @@
- <!-- Latest compiled and minified Bootstrap 3.4.1 CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-
 <div class="row">
-    <div class="col-md-12">
-        <div class="col-md-12 text-center">
-            <strong>{{message}}</strong>
-        </div>
+<div class="col-md-12">
+<h2>Demos</h2>
+<hr />
 
-        <h2>Demos <a href="/products/add" class="btn btn-success pull-right">Add Product</a></h2>
-        <hr />
-
-        <p>
-        <div class="table-responsive">
+<div class="table-responsive">
             <table class="table ">
                 <thead>
                     <tr>
-                        <th>Product&nbsp;ID</th>
+                    
+                        <th>ID</th>
                         <th>Title</th>
-                        <th>Product&nbsp;Date</th>
+                        <th>Post Date</th>
                         <th>Category</th>
                         <th>Published</th>
                     </tr>
+                    
                 </thead>
                 <tbody>
                     {{#each products}}
                     <tr>
-                        <td>{{id}}</td>
-                        <td>{{title}}</td>
-                        <td>{{postDate}}</td>
-                        <td><a href="/demos?category={{category}}">{{category}}</a></td>
-                        <td>{{published}}</td>
-                        <td><a href="/demos/delete/{{id}}" class="btn btn-danger">Remove</a></td>
+                        <td>{{this.id}}</td>
+                        <td>{{this.title}}</td>
+                        <td>{{this.postDate}}</td>
+                        <td><a href="/demos?category={{this.category}}">{{this.category}}</a></td>
+                        <td>{{this.published}}</td>
                     </tr>
                     {{/each}}
+
                 </tbody>
             </table>
         </div>
 
-        </p>
-
-
     </div>
+    
+    {{#unless demos}}
+        <div class="col-md-12 text-center">
+            <strong>{{message}}</strong>
+        </div>
+  {{/unless}}
 </div>
